@@ -207,7 +207,7 @@ int main(int argc, char *argv[])
 	hosts = libssh2_knownhost_init(session);
 
 	if (known_hosts_path)
-		if (0 != libssh2_knownhost_readfile(hosts,
+		if (0 > libssh2_knownhost_readfile(hosts,
 					known_hosts_path,
 					LIBSSH2_KNOWNHOST_FILE_OPENSSH))
 			nag_exit(NAG_WTF,
